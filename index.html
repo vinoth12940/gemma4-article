@@ -122,12 +122,22 @@
             padding: 24px;
             margin: 20px 0;
         }
+        .caption {
+            color: var(--gray);
+            font-size: 0.85em;
+            text-align: center;
+            margin-top: -16px;
+            margin-bottom: 24px;
+        }
     </style>
 </head>
 <body>
 <article>
     <h1>Gemma 4: Byte for Byte, the Most Capable Open Models</h1>
     <p class="meta">April 2, 2026 · 8 min read · <span class="tag">#OpenSource</span> <span class="tag">#LLM</span> <span class="tag">#Google</span> <span class="tag">#Gemma</span> <span class="tag">#AI</span></p>
+
+    <img src="https://vinoth12940.github.io/gemma4-article/images/gemma4-header.png" alt="Gemma 4 official announcement header">
+    <p class="caption">Image credit: Google Blog</p>
 
     <p>Google DeepMind just dropped <strong>Gemma 4</strong> — and the open-source AI world has a new heavyweight champion. Available in four sizes from a pocket-friendly edge model to a workstation powerhouse, Gemma 4 delivers what Google claims is the <em>highest intelligence per parameter</em> of any open model available today.</p>
 
@@ -147,16 +157,16 @@
 
     <div class="highlight-box">
         <ul>
-            <li><strong>Gemma 4 E2B (Edge)</strong> — Ultra-lightweight for mobile and IoT devices. Native audio understanding. 128K context window.</li>
-            <li><strong>Gemma 4 E4B (Edge)</strong> — Balanced edge model with multimodal capabilities (text, image, video, audio). 128K context window.</li>
+            <li><strong>Gemma 4 E2B (Edge)</strong> — Ultra-lightweight for mobile and IoT devices. Native audio understanding. 128K context window. Dense architecture.</li>
+            <li><strong>Gemma 4 E4B (Edge)</strong> — Balanced edge model with multimodal capabilities (text, image, video, audio). 128K context window. Dense architecture.</li>
             <li><strong>Gemma 4 26B MoE</strong> — Mixture-of-Experts model that activates only 4B parameters during inference. Runs on consumer GPUs. 256K context window.</li>
             <li><strong>Gemma 4 31B Dense</strong> — The flagship. Full dense architecture for maximum quality. Runs on a single workstation GPU. 256K context window.</li>
         </ul>
     </div>
 
-    <p>The key insight in this lineup is the <strong>26B MoE</strong>. While it has 26 billion total parameters, it only activates a 4B subset per token during inference. This means you get near-31B quality with inference speed closer to a 4B model — a massive efficiency gain for production deployments.</p>
+    <img src="https://vinoth12940.github.io/gemma4-article/images/model-family.png" alt="Gemma 4 model family sizes and capabilities">
 
-    <img src="https://vinoth12940.github.io/gemma4-article/images/model-family.png" alt="Gemma 4 model family architecture overview">
+    <p>The key insight in this lineup is the <strong>26B MoE</strong>. While it has 26 billion total parameters, it only activates a 4B subset per token during inference. This means you get near-31B quality with inference speed closer to a 4B model — a massive efficiency gain for production deployments.</p>
 
     <hr>
 
@@ -188,7 +198,8 @@
         </ul>
     </div>
 
-    <img src="https://vinoth12940.github.io/gemma4-article/images/benchmarks.png" alt="Gemma 4 benchmark performance comparison">
+    <img src="https://vinoth12940.github.io/gemma4-article/images/gemma4-graph.png" alt="Gemma 4 model performance vs size — official benchmark graph">
+    <p class="caption">Model Performance vs Size (Image credit: HuggingFace Gemma 4 Blog)</p>
 
     <p>To put the 85.7% GPQA Diamond score in perspective: <em>PhD experts achieve 65% accuracy</em> on this benchmark, while skilled non-experts with web access only reach 34%. Gemma 4's 31B Dense is operating at a level that surpasses human domain experts.</p>
 
@@ -240,8 +251,6 @@
         <li><strong>Docker</strong> — containerized deployment</li>
     </ul>
 
-    <img src="https://vinoth12940.github.io/gemma4-article/images/deployment.png" alt="Gemma 4 deployment options across hardware and frameworks">
-
     <hr>
 
     <h2>Fine-Tuning: TRL and Unsloth Studio</h2>
@@ -286,9 +295,9 @@ model = FastLanguageModel.get_peft_model(
         </ul>
     </div>
 
-    <p>The key takeaway: <strong>Gemma 4 31B occupies a unique niche</strong>. It's the model you choose when you need frontier-level reasoning on a single workstation GPU with full Apache 2.0 freedom. For teams that can't justify multi-GPU setups for Llama 4 or DeepSeek V3.2, Gemma 4 delivers 90%+ of the capability at a fraction of the hardware cost.</p>
-
     <img src="https://vinoth12940.github.io/gemma4-article/images/comparison.png" alt="Gemma 4 compared to other open models in 2026">
+
+    <p>The key takeaway: <strong>Gemma 4 31B occupies a unique niche</strong>. It's the model you choose when you need frontier-level reasoning on a single workstation GPU with full Apache 2.0 freedom. For teams that can't justify multi-GPU setups for Llama 4 or DeepSeek V3.2, Gemma 4 delivers 90%+ of the capability at a fraction of the hardware cost.</p>
 
     <hr>
 
